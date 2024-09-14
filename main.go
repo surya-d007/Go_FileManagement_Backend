@@ -1,6 +1,7 @@
 package main
 
 import (
+	"BackEnd_21BCE5685/controllers"
 	"BackEnd_21BCE5685/db"
 	"BackEnd_21BCE5685/routes"
 	"log"
@@ -11,6 +12,7 @@ func main() {
 	// Initialize the database
 	db.InitDB()
 
+	controllers.StartBackgroundJob()
 	// Initialize router
 	router := routes.InitRoutes()
 

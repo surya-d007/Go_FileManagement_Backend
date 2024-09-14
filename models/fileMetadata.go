@@ -125,3 +125,41 @@ func SearchFiles(db *sql.DB, filename string, uploadDate *time.Time, fileType st
 
 	return metadataList, nil
 }
+
+
+
+
+// GetExpiredFiles retrieves files that are older than the given cutoff time
+func GetExpiredFiles(db *sql.DB, cutoffTime time.Time) ([]*FileMetadata, error) {
+	query := "SELECT id, filename, url, size, upload_date, email FROM file_metadata WHERE upload_date <= $1"
+	rows, err := db.Query(query, cutoffTime)
+	if err != nil {
+		return nil, fmt.Errorf("failed to query expired files: %w", err)
+	}
+	defer rows.Close()
+
+	var expiredFiles []*FileMetadata
+	for rows.Next() {
+		var file FileMetadata
+		if err := rows.Scan(&file.ID, &file.Filename, &file.URL, &file.Size, &file.UploadDate, &file.Email); err != nil {
+			return nil, fmt.Errorf("failed to scan file metadata: %w", err)
+		}
+		expiredFiles = append(expiredFiles, &file)
+	}
+
+	if err := rows.Err(); err != nil {
+		return nil, fmt.Errorf("error iterating rows: %w", err)
+	}
+
+	return expiredFiles, nil
+}
+
+// DeleteFileMetadata removes file metadata from the database using file ID
+func DeleteFileMetadata(db *sql.DB, fileID int) error {
+	query := "DELETE FROM file_metadata WHERE id = $1"
+	_, err := db.Exec(query, fileID)
+	if err != nil {
+		return fmt.Errorf("failed to delete file metadata: %w", err)
+	}
+	return nil
+}

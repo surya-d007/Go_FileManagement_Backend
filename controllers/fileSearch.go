@@ -70,14 +70,15 @@ func SearchFiles(w http.ResponseWriter, r *http.Request) {
 
 	// If cache exists and is valid, return cached data
 	if found && isCacheValid(cachedItem) {
-		fmt.Println("Serving from cache")
+		fmt.Printf("\nCache hit - Serving from cache for key: %s\n", cacheKey)
 		writeJSONResponse(w, cachedItem.Data)
 		return
 	}
 
 	// If not found in cache or cache is expired, fetch from the database
-	fmt.Println("Fetching from database")
+	
 	dbConn := db.DB
+	fmt.Printf("\nCache miss - Executing database query with parameters: filename=%s , uploadDate=%v, fileType=%s\n", filename, uploadDate, fileType)
 	metadataList, err := models.SearchFiles(dbConn, filename, uploadDate, fileType)
 	if err != nil {
 		http.Error(w, "Failed to search files: "+err.Error(), http.StatusInternalServerError)
@@ -96,4 +97,3 @@ func SearchFiles(w http.ResponseWriter, r *http.Request) {
 	writeJSONResponse(w, metadataList)
 }
 
-// writeJSONResponse is a helper function to write JSON responses
