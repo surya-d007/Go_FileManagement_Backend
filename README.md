@@ -1,16 +1,16 @@
-# 21BCE5685 SURYA D - Backend Task - Trademarkia®
+# 21BCE5685 SURYA D - Backend Task - Trademarkia
 
 > ## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI , Cron Job
 
-> ## Docker hub - https://hub.docker.com/r/suryad007/backendgoapp1/tags
+> ### Docker hub - https://hub.docker.com/r/suryad007/backendgoapp1/tags
 
 ## Server base URL - http://52.66.239.215
 
-> # Note : It is http
+> ## Note : It is http
 
 ## Features
 
-1. User registration and login with password hashing.
+1. User registration and login with password hashing & JWT.
 2. File upload to AWS S3 with metadata storage in PostgreSQL.
 3. Search functionality with caching for file metadata.
 4. Automatic cleanup of expired files from S3 and PostgreSQL.
@@ -19,7 +19,6 @@
 7. Corn job which runs once in 24 hrs
 8. TestApi Scripts
 9. Dockerization
-10.
 
 ## Background Cron Job
 
@@ -29,7 +28,11 @@
 
 > #### A simple in-memory cache stores PostgreSQL query search results, enhancing performance with a 5-minute Time-To-Live (TTL).
 
-## API info:
+#
+
+#
+
+# API info:
 
 ### 1. POST - /register - http://52.66.239.215/register
 
