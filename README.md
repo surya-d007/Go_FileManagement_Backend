@@ -106,7 +106,7 @@
 
 ### 5. GET /searchFiles: - http://52.66.239.215/searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
 
-> ### like this u can combine any combination in the Query params
+> #### like this u can combine any combination in the Query params
 >
 > ### sample search - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf&upload_date=2024-09-15
 >
