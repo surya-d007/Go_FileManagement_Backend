@@ -19,12 +19,12 @@ func deleteExpiredFiles() {
 
 		// Define the total sleep duration
 		sleepDuration := 1 * time.Minute
-		interval := 1 * time.Second
+		interval := 30 * time.Second
 
 		// Loop to log remaining time every second
 		for remainingTime := sleepDuration; remainingTime > 0; remainingTime -= interval {
 			time.Sleep(interval)
-			log.Printf("[%s] Time remaining until next execution: %s\n", time.Now().Format(time.RFC3339), remainingTime)
+			log.Printf("[%s] Time remaining until next execution of file deleting cron : %s\n", time.Now().Format(time.RFC3339), remainingTime)
 		}
 
 		// Calculate and log the actual time spent before execution
@@ -87,7 +87,6 @@ func deleteExpiredFiles() {
 	}
 }
 
-// StartBackgroundJob starts the background job for deleting expired files
 func StartBackgroundJob() {
 	go deleteExpiredFiles()
 }
