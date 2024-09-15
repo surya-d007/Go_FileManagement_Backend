@@ -187,3 +187,84 @@
 >    "fileURL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/aaaa.pdf"
 > }
 > ```
+
+To add a description of your PostgreSQL database schema and details to your `README.md` file in GitHub, you can structure it like this:
+
+---
+
+## Database Schema
+
+### Tables
+
+The PostgreSQL database contains two main tables: `file_metadata` and `users`.
+
+#### 1. `file_metadata`
+
+This table stores metadata for uploaded files, including the file name, URL, size, upload date, and the email of the user who uploaded the file.
+
+| Column Name   | Data Type   | Description                                        |
+| ------------- | ----------- | -------------------------------------------------- |
+| `id`          | `INT`       | Unique identifier for each file record             |
+| `filename`    | `TEXT`      | The name of the uploaded file                      |
+| `url`         | `TEXT`      | The URL where the file is stored (e.g., S3 bucket) |
+| `size`        | `INT`       | Size of the file in bytes                          |
+| `upload_date` | `TIMESTAMP` | The timestamp when the file was uploaded           |
+| `email`       | `TEXT`      | Email of the user who uploaded the file            |
+
+**Sample Data:**
+
+```
+ id |                   filename                    |                         url                          |  size   |        upload_date         |      email
+----+-----------------------------------------------+------------------------------------------------------|---------+----------------------------+------------------
+  6 | abcd (1).pdf                                  | https://file-upload-bucket-surya-aws.s3.ap-south-1...|   69249 | 2024-09-15 08:00:41.729401 | surya
+ 10 | Database Details - RDS Management Console.pdf | https://file-upload-bucket-surya-aws.s3.ap-south-1...|  519341 | 2024-09-15 08:05:59.113392 | surya
+```
+
+#### 2. `users`
+
+This table stores user authentication information, including email and hashed password.
+
+| Column Name | Data Type | Description                             |
+| ----------- | --------- | --------------------------------------- |
+| `id`        | `INT`     | Unique identifier for each user         |
+| `email`     | `TEXT`    | User's email address                    |
+| `password`  | `TEXT`    | Hashed password for user authentication |
+
+**Sample Data:**
+
+```
+ id |       email       |                           password
+----+-------------------+--------------------------------------------------------------
+  1 | user1@example.com | $2a$10$4zO.Iie2Ta.KrvpC9kxZcuezfTeRyVmQbJldo5BZ.etCP6hbs6nm6
+  2 | jhsfc             | $2a$10$faDjlMv1XgATo020ExsCWOx0SgrcrMILTN7mqKkyVvIexV3FBEAmy
+```
+
+### Go Structs
+
+The Go code interacting with this database uses the following structs for the tables:
+
+```go
+type FileMetadata struct {
+    ID         int
+    Filename   string
+    URL        string
+    Size       int
+    UploadDate time.Time
+    Email      string
+}
+
+type User struct {
+    ID       int    `json:"id"`
+    Email    string `json:"email"`
+    Password string `json:"password"`
+}
+```
+
+### Usage Notes
+
+- **file_metadata:** Stores information about uploaded files. The `url` field contains the link to the stored file.
+- **users:** Contains email and password (stored as bcrypt hash) for user authentication.
+
+---
+
+This structured documentation will help users understand your database schema and its purpose.
