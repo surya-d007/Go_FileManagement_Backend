@@ -17,8 +17,10 @@
 
 Description: Registers a new user with email and hashed password.
 
+### body :
+
 ```bash
-body :
+
 {
     "email":"sample@gmail.com",
     "password":"samplepass"
