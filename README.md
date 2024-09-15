@@ -37,7 +37,7 @@ Status - 201 Created
 
 Description: Logs in an existing user and returns a JWT token.
 
-body :
+**body :**
 
 ```bash
 {
@@ -46,7 +46,7 @@ body :
 }
 ```
 
-Response
+**Response**
 
 ```bash
 {
