@@ -10,6 +10,8 @@ import (
 
 func main() {
 	// Initialize the database
+
+
 	db.InitDB()
 
 	controllers.StartBackgroundJob()
