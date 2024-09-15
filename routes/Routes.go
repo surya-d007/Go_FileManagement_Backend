@@ -14,6 +14,7 @@ func InitRoutes() *mux.Router {
 
 	router.HandleFunc("/files/{email}", controllers.RetrieveFileMetadata).Methods("GET") // Retrieve file metadata
 	router.HandleFunc("/share/{file_id:[0-9]+}", controllers.ShareFile).Methods("GET") // Share file URL
+	
 	router.HandleFunc("/searchFiles", controllers.SearchFiles).Methods("GET")
 
 
