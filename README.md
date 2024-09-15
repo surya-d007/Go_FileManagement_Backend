@@ -58,11 +58,11 @@
 
 > Description: DesUpload a file to S3 and store metadata in PostgreSQL and get filE url as response
 >
-> **body : form-data **
+> **body : Content-Type: multipart/form-data **
 >
 > ```bash
 > {
->    Key   : Value
+>
 >    file  type file : [Your file]
 >    email type text : "sample@gmail.com"
 > }
