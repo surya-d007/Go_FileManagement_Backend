@@ -54,6 +54,14 @@
 > }
 > ```
 
+#
+
+#
+
+#
+
+#
+
 ### 3. POST /upload:
 
 > Description: DesUpload a file to S3 and store metadata in PostgreSQL and get filE url as response
