@@ -13,7 +13,7 @@
 
 ## Operations
 
-1. Post http://52.66.239.215/register
+### 1. Post - /register - http://52.66.239.215/register
 
 Description: Registers a new user with email and hashed password.
 
