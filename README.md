@@ -1,10 +1,10 @@
 # 21BCE5685 SURYA D - Backend Task - Trademarkia®
 
-## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI , Cron Job
+> ## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI , Cron Job
 
 ## Server base URL - http://52.66.239.215
 
-> # Note : It is ** http **
+> # Note : It is http
 
 ## Features
 
@@ -14,6 +14,10 @@
 4. Automatic cleanup of expired files from S3 and PostgreSQL.
 5. Shareable public links for files.
 6. DB queries cache
+
+## Background Cron Job
+
+> #### The application includes a background job that runs once in 24hrs to delete expired files from S3 and PostgreSQL. The job is started automatically when the application starts.
 
 ## API info:
 
@@ -170,7 +174,3 @@
 >    "fileURL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/aaaa.pdf"
 > }
 > ```
-
-## Background Cron Job
-
-> #### The application includes a background job that runs once in 24hrs to delete expired files from S3 and PostgreSQL. The job is started automatically when the application starts.
