@@ -14,7 +14,21 @@
 ## Operations
 
 1. Post /register
-2. Post /login"
+
+Description: Registers a new user with email and hashed password.
+Request Body:
+
+```
+http://52.66.239.215/register
+
+body : {
+    "email":"sample@gmail.com",
+    "password":"samplepass"
+
+}
+```
+
+2. Post /login
 3. POST /upload: Upload a file to S3 and store metadata in PostgreSQL.
 4. GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
 5. GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
