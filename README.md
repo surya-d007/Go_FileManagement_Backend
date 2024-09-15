@@ -77,7 +77,7 @@
 > }
 > ```
 
-4.  GET /searchFiles: - http://52.66.239.215/searchFiles?filename={File Name}&file_type={File type}&upload_date={yyyy-mm-dd}
+4.  GET /searchFiles: - http://52.66.239.215/searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
 
 > ### like this u can combine any combination in the Query params
 >
