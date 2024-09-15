@@ -108,11 +108,15 @@
 
 > ### like this u can combine any combination in the Query params
 >
-> sample search - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf&upload_date=2024-09-15
-> Only type http://52.66.239.215/searchFiles?file_type=pdf
-> Onnly date - http://52.66.239.215/searchFiles?upload_date=2024-09-15
-> Only Filename - http://52.66.239.215/searchFiles?filename=ab
-> File name and type - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf
+> ### sample search - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf&upload_date=2024-09-15
+>
+> ### Only type http://52.66.239.215/searchFiles?file_type=pdf
+>
+> ### Onnly date - http://52.66.239.215/searchFiles?upload_date=2024-09-15
+>
+> ### Only Filename - http://52.66.239.215/searchFiles?filename=ab
+>
+> ### File name and type - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf
 
 > Description: Search for files with optional query parameters (filename, upload_date, file_type).
 >
