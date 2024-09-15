@@ -190,9 +190,9 @@
 
 To add a description of your PostgreSQL database schema and details to your `README.md` file in GitHub, you can structure it like this:
 
----
+--
 
-## Database Schema
+# Database Schema
 
 ### Tables
 
@@ -216,8 +216,8 @@ This table stores metadata for uploaded files, including the file name, URL, siz
 ```
  id |                   filename                    |                         url                          |  size   |        upload_date         |      email
 ----+-----------------------------------------------+------------------------------------------------------|---------+----------------------------+------------------
-  6 | abcd (1).pdf                                  | https://file-upload-bucket-surya-aws.s3.ap-south-1...|   69249 | 2024-09-15 08:00:41.729401 | surya
- 10 | Database Details - RDS Management Console.pdf | https://file-upload-bucket-surya-aws.s3.ap-south-1...|  519341 | 2024-09-15 08:05:59.113392 | surya
+  6 | abcd (1).pdf                                  | https://file-upload-bucket-surya-aws.s3.ap-south-1...|   69249 | 2024-09-15 08:00:41.729401 | sample@gmail.com
+ 10 | Database Details - RDS Management Console.pdf | https://file-upload-bucket-surya-aws.s3.ap-south-1...|  519341 | 2024-09-15 08:05:59.113392 | sample@gmail.com
 ```
 
 #### 2. `users`
@@ -235,8 +235,8 @@ This table stores user authentication information, including email and hashed pa
 ```
  id |       email       |                           password
 ----+-------------------+--------------------------------------------------------------
-  1 | user1@example.com | $2a$10$4zO.Iie2Ta.KrvpC9kxZcuezfTeRyVmQbJldo5BZ.etCP6hbs6nm6
-  2 | jhsfc             | $2a$10$faDjlMv1XgATo020ExsCWOx0SgrcrMILTN7mqKkyVvIexV3FBEAmy
+  1 | sample@gmail.com | $2a$10$4zO.Iie2Ta.KrvpC9kxZcuezfTeRyVmQbJldo5BZ.etCP6hbs6nm6
+  2 | sample@gmail.com | $2a$10$faDjlMv1XgATo020ExsCWOx0SgrcrMILTN7mqKkyVvIexV3FBEAmy
 ```
 
 ### Go Structs
@@ -264,7 +264,3 @@ type User struct {
 
 - **file_metadata:** Stores information about uploaded files. The `url` field contains the link to the stored file.
 - **users:** Contains email and password (stored as bcrypt hash) for user authentication.
-
----
-
-This structured documentation will help users understand your database schema and its purpose.
