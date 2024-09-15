@@ -20,7 +20,7 @@ const (
 // In-memory cache for file metadata
 var cache, _ = lru.New(cacheSize)
 
-// RetrieveFileMetadata handles retrieval of file metadata
+
 
 
 
