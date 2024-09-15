@@ -56,7 +56,7 @@ func deleteExpiredFiles() {
 		log.Printf("[%s] Current time: %s\n", now.Format(time.RFC3339), now.Format(time.RFC3339))
 
 		// Get the list of expired files from the database
-		expiredFiles, err := models.GetExpiredFiles(db.DB, now.Add(-1*time.Minute))
+		expiredFiles, err := models.GetExpiredFiles(db.DB, now.Add(-24 * time.Hour))
 		if err != nil {
 			log.Printf("[%s] Failed to get expired files: %v\n", time.Now().Format(time.RFC3339), err)
 			continue
