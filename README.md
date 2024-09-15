@@ -16,11 +16,12 @@
 1. Post /register
 
 Description: Registers a new user with email and hashed password.
+
+```
 Request :
 http://52.66.239.215/register
 body :
 
-```
 {
     "email":"sample@gmail.com",
     "password":"samplepass"
