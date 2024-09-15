@@ -124,9 +124,9 @@
 >
 > ```bash
 >
->    "filename":"abcd"
+>    "filename":"ab"
 >    "file_type":"pdf"
->    "upload_date":"YYYY-MM-DD"
+>    "upload_date":"2024-09-15"
 >
 > ```
 >
@@ -159,16 +159,10 @@
 >
 > body :
 >
-> ```bash
-> {
->    "email":"sample@gmail.com",
->    "password":"samplepass"
-> }
-> ```
->
 > Response
 >
-> ```
-> Response:
-> Status - 201 Created
+> ```bash
+>     {
+>    "fileURL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/aaaa.pdf"
+>    }
 > ```
