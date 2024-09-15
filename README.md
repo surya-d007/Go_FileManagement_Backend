@@ -11,7 +11,7 @@
 5. Shareable public links for files.
 6. DB queries cache
 
-## Operations
+## API info:
 
 ### 1. POST - /register - http://52.66.239.215/register
 
@@ -162,7 +162,11 @@
 > Response
 >
 > ```bash
->     {
+> {
 >    "fileURL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/aaaa.pdf"
->    }
+> }
 > ```
+
+## Background Cron Job
+
+> #### The application includes a background job that runs once in 24hrs to delete expired files from S3 and PostgreSQL. The job is started automatically when the application starts.
