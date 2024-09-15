@@ -1,13 +1,13 @@
-# Use the official Golang image from the Docker Hub
+# Stage 1: Build the Go app
 FROM golang:1.23 AS builder
 
-# Set the Current Working Directory inside the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the go mod and sum files
+# Copy go.mod and go.sum files
 COPY go.mod go.sum ./
 
-# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
+# Download all dependencies
 RUN go mod download
 
 # Copy the source code into the container
@@ -16,16 +16,16 @@ COPY . .
 # Build the Go app
 RUN go build -o main .
 
-# Start a new stage from scratch
-FROM debian:bullseye-slim
+# Stage 2: Create a smaller image for the final build
+FROM debian:bookworm-slim
 
-# Set the Current Working Directory inside the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Pre-built binary file from the previous stage
+# Copy the pre-built binary file from the previous stage
 COPY --from=builder /app/main .
 
-# Expose port 8080 to the outside world
+# Expose port 80 to the outside world
 EXPOSE 80
 
 # Command to run the executable

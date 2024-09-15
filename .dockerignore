@@ -1,12 +1,8 @@
-# Ignore the local Go binary
-main
 
-# Ignore the local Go build artifacts
 *.exe
 *.test
 *.out
 
-# Ignore files related to IDEs or OS
 .DS_Store
 *.git
 *.gitignore
