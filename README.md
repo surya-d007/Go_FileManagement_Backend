@@ -77,7 +77,36 @@
 > }
 > ```
 
-4.  GET /searchFiles: - http://52.66.239.215/searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
+4.  GET /files/{email}: - http://52.66.239.215/files/{email of the user}
+
+Sample : http://52.66.239.215/files/sample@gmail.com
+
+> Description: Retrieve metadata for files uploaded by a specific email.
+>
+> **Response**
+>
+> `````bash
+> [
+>    {
+>        "ID": 26,
+>        "Filename": "free-parking.png",
+>        "URL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/free-parking.png",
+>        "Size": 12241,
+>        "UploadDate": "2024-09-15T07:07:28.706456Z",
+>        "Email": "sample@gmail.com"
+>    },
+>    {
+>        "ID": 27,
+>        "Filename": "aaaa.pdf",
+>        "URL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/aaaa.pdf",
+>        "Size": 198520,
+>        "UploadDate": "2024-09-15T07:07:38.317639Z",
+>        "Email": "sample@gmail.com"
+>    }
+> ]````
+> `````
+
+5.  GET /searchFiles: - http://52.66.239.215/searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
 
 > ### like this u can combine any combination in the Query params
 >
@@ -95,7 +124,7 @@
 >
 >    "filename":"abcd"
 >    "file_type":"pdf"
-> "upload_date":"YYYY-MM-DD"
+>    "upload_date":"YYYY-MM-DD"
 >
 > ```
 >
@@ -122,5 +151,4 @@
 > ]
 > ```
 
-5.  GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
 6.  GET /share/{file_id}: Generate a public link for a file.
