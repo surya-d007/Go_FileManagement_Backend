@@ -54,7 +54,7 @@ Status - 201 Created
 > }
 > ```
 >
-> 3. POST /upload: Upload a file to S3 and store metadata in PostgreSQL.
-> 4. GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
-> 5. GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
-> 6. GET /share/{file_id}: Generate a public link for a file.
+> 3.  POST /upload: Upload a file to S3 and store metadata in PostgreSQL.
+> 4.  GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
+> 5.  GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
+> 6.  GET /share/{file_id}: Generate a public link for a file.
