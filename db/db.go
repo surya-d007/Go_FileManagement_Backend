@@ -11,6 +11,7 @@ var DB *sql.DB
 
 func InitDB() {
 	//connStr := "host=database-1.cfaiiyw4ghic.ap-south-1.rds.amazonaws.com port=5432 user=postgres password=Surya420 dbname=database-1"
+	//connStr := "host=database-1.cfaiiyw4ghic.ap-south-1.rds.amazonaws.com port=5432 user=postgres password=Surya420 dbname=database-1"
 	connStr := "host=database-1.cfaiiyw4ghic.ap-south-1.rds.amazonaws.com port=5432 user=postgres password=Surya420 dbname=postgres"
 
 	var err error
