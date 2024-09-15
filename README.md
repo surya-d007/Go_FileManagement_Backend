@@ -20,6 +20,25 @@
 8. TestApi Scripts
 9. Dockerization
 
+## Prerequisites
+
+Before running the Go server, ensure you have the following tools installed and configured:
+
+> #### 1. Install Go
+>
+> #### 2. Install AWS CLI
+>
+> #### 3. Configure AWS CLI
+>
+> ```bash
+> aws configure
+> AWS Access Key ID [None]: YOUR_ACCESS_KEY
+> AWS Secret Access Key [None]: YOUR_SECRET_KEY
+> Default region name [None]: YOUR_REGION (e.g., ap-south-1)
+> ```
+>
+> #### 4. PostgresSQL in cloud or Local
+
 ## Background Cron Job
 
 > #### The application includes a background job that runs once in 24hrs to delete expired files from S3 and PostgreSQL. The job is started automatically when the application starts.
@@ -259,8 +278,3 @@ type User struct {
     Password string `json:"password"`
 }
 ```
-
-### Usage Notes
-
-- **file_metadata:** Stores information about uploaded files. The `url` field contains the link to the stored file.
-- **users:** Contains email and password (stored as bcrypt hash) for user authentication.
