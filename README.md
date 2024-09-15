@@ -17,7 +17,7 @@
 
 Description: Registers a new user with email and hashed password.
 
-### body :
+body :
 
 ```bash
 {
@@ -33,11 +33,11 @@ Response:
 Status - 201 Created
 ```
 
-2. Post /login
+### 2. Post /login
 
 Description: Logs in an existing user and returns a JWT token.
 
-### body :
+body :
 
 ```bash
 {
