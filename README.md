@@ -19,6 +19,10 @@
 
 > #### The application includes a background job that runs once in 24hrs to delete expired files from S3 and PostgreSQL. The job is started automatically when the application starts.
 
+## Caching
+
+> #### A simple in-memory cache stores PostgreSQL query search results, enhancing performance with a 5-minute Time-To-Live (TTL).
+
 ## API info:
 
 ### 1. POST - /register - http://52.66.239.215/register
