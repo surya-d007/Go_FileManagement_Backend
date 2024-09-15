@@ -1,6 +1,6 @@
 # 21BCE5685 SURYA D - Backend Task - Trademarkia®
 
-## File Management System - Go , AWS S3 , Postgres , Docker , EC2 hosting
+## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI
 
 ## Features
 
@@ -9,11 +9,11 @@
 3. Search functionality with caching for file metadata.
 4. Automatic cleanup of expired files from S3 and PostgreSQL.
 5. Shareable public links for files.
-6. DB queries cache in server
+6. DB queries cache
 
 ## Operations
 
-### 1. Post - /register - http://52.66.239.215/register
+### 1. POST - /register - http://52.66.239.215/register
 
 > Description: Registers a new user with email and hashed password.
 >
@@ -33,7 +33,7 @@
 > Status - 201 Created
 > ```
 
-### 2. Post /login - http://52.66.239.215/login
+### 2. POST /login - http://52.66.239.215/login
 
 > Description: Logs in an existing user and returns a JWT token.
 >
@@ -77,15 +77,12 @@
 > }
 > ```
 
-4.  GET /files/{email}: - http://52.66.239.215/files/{email of the user}
-
-Sample : http://52.66.239.215/files/sample@gmail.com
+### 4. GET /files/{email}: - http://52.66.239.215/files/{userEmail}
 
 > Description: Retrieve metadata for files uploaded by a specific email.
+> Sample : http://52.66.239.215/files/sample@gmail.com > **Response**
 >
-> **Response**
->
-> `````bash
+> ```bash
 > [
 >    {
 >        "ID": 26,
@@ -103,10 +100,11 @@ Sample : http://52.66.239.215/files/sample@gmail.com
 >        "UploadDate": "2024-09-15T07:07:38.317639Z",
 >        "Email": "sample@gmail.com"
 >    }
-> ]````
-> `````
+> ]
+>
+> ```
 
-5.  GET /searchFiles: - http://52.66.239.215/searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
+### 5. GET /searchFiles: - http://52.66.239.215/searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
 
 > ### like this u can combine any combination in the Query params
 >
@@ -151,4 +149,22 @@ Sample : http://52.66.239.215/files/sample@gmail.com
 > ]
 > ```
 
-6.  GET /share/{file_id}: Generate a public link for a file.
+### 6. GET /share/{file_id}: - http://52.66.239.215/share/27
+
+> Description: Generate a public link for a file using the id assigned by Postgres
+>
+> body :
+>
+> ```bash
+> {
+>    "email":"sample@gmail.com",
+>    "password":"samplepass"
+> }
+> ```
+>
+> Response
+>
+> ```
+> Response:
+> Status - 201 Created
+> ```
