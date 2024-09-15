@@ -1,6 +1,10 @@
 # 21BCE5685 SURYA D - Backend Task - Trademarkia®
 
-## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI
+## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI , Cron Job
+
+## Server base URL - http://52.66.239.215
+
+> # Note : It is ** http **
 
 ## Features
 
