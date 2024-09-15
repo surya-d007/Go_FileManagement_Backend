@@ -2,7 +2,7 @@
 
 ## File Management System - Go , AWS S3 , Postgres , Docker , EC2 hosting
 
-# Features
+### Features
 
 1. User registration and login with password hashing.
 2. File upload to AWS S3 with metadata storage in PostgreSQL.
