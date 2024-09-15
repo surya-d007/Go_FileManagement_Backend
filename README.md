@@ -33,7 +33,7 @@
 > Status - 201 Created
 > ```
 
-### 2. Post /login
+### 2. Post /login - http://52.66.239.215/login
 
 > Description: Logs in an existing user and returns a JWT token.
 >
@@ -53,8 +53,30 @@
 >    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXBsZUBnZG1haWwuY29tIiwiZXhwIjoxNzI2NjQxNTQyfQ.oLIUq3OqlKk4AFc3UXrnnIhQQj38XNydW6drLYf00OE"
 > }
 > ```
+
+### 3. POST /upload:
+
+> Description: DesUpload a file to S3 and store metadata in PostgreSQL and get filE url as response
 >
-> 3.  POST /upload: Upload a file to S3 and store metadata in PostgreSQL.
-> 4.  GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
-> 5.  GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
-> 6.  GET /share/{file_id}: Generate a public link for a file.
+> **body : form-data **
+>
+> ```bash
+> {
+>    Key   : Value
+>    file  type file : [Your file]
+>    email type text : "sample@gmail.com"
+> }
+>
+> ```
+>
+> **Response**
+>
+> ```bash
+> {
+>    "fileURL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/Stack.pdf"
+> }
+> ```
+
+4.  GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
+5.  GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
+6.  GET /share/{file_id}: Generate a public link for a file.
