@@ -15,23 +15,23 @@
 
 ### 1. Post - /register - http://52.66.239.215/register
 
-Description: Registers a new user with email and hashed password.
-
-body :
-
-```bash
-{
-    "email":"sample@gmail.com",
-    "password":"samplepass"
-}
-```
-
-Response
-
-```
-Response:
-Status - 201 Created
-```
+> Description: Registers a new user with email and hashed password.
+>
+> body :
+>
+> ```bash
+> {
+>    "email":"sample@gmail.com",
+>    "password":"samplepass"
+> }
+> ```
+>
+> Response
+>
+> ```
+> Response:
+> Status - 201 Created
+> ```
 
 ### 2. Post /login
 
