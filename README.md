@@ -35,26 +35,26 @@ Status - 201 Created
 
 ### 2. Post /login
 
-Description: Logs in an existing user and returns a JWT token.
-
-**body :**
-
-```bash
-{
-    "email":"sample@gmail.com",
-    "password":"samplepass"
-}
-```
-
-**Response**
-
-```bash
-{
-    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXBsZUBnZG1haWwuY29tIiwiZXhwIjoxNzI2NjQxNTQyfQ.oLIUq3OqlKk4AFc3UXrnnIhQQj38XNydW6drLYf00OE"
-}
-```
-
-3. POST /upload: Upload a file to S3 and store metadata in PostgreSQL.
-4. GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
-5. GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
-6. GET /share/{file_id}: Generate a public link for a file.
+> Description: Logs in an existing user and returns a JWT token.
+>
+> **body :**
+>
+> ```bash
+> {
+>    "email":"sample@gmail.com",
+>    "password":"samplepass"
+> }
+> ```
+>
+> **Response**
+>
+> ```bash
+> {
+>    "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbXBsZUBnZG1haWwuY29tIiwiZXhwIjoxNzI2NjQxNTQyfQ.oLIUq3OqlKk4AFc3UXrnnIhQQj38XNydW6drLYf00OE"
+> }
+> ```
+>
+> 3. POST /upload: Upload a file to S3 and store metadata in PostgreSQL.
+> 4. GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
+> 5. GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
+> 6. GET /share/{file_id}: Generate a public link for a file.
