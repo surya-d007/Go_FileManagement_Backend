@@ -2,6 +2,8 @@
 
 > ## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI , Cron Job
 
+> ## Docker hub - https://hub.docker.com/r/suryad007/backendgoapp1/tags
+
 ## Server base URL - http://52.66.239.215
 
 > # Note : It is http
@@ -14,6 +16,10 @@
 4. Automatic cleanup of expired files from S3 and PostgreSQL.
 5. Shareable public links for files.
 6. DB queries cache
+7. Corn job which runs once in 24 hrs
+8. TestApi Scripts
+9. Dockerization
+10.
 
 ## Background Cron Job
 
