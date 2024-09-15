@@ -54,15 +54,7 @@
 > }
 > ```
 
-###
-
-###
-
-###
-
-###
-
-### 3. POST /upload:
+### 3. POST /upload: - http://52.66.239.215/upload
 
 > Description: DesUpload a file to S3 and store metadata in PostgreSQL and get filE url as response
 >
@@ -85,6 +77,50 @@
 > }
 > ```
 
-4.  GET /searchFiles: Search for files with optional query parameters (filename, upload_date, file_type).
+4.  GET /searchFiles: - http://52.66.239.215/searchFiles?filename={File Name}&file_type={File type}&upload_date={yyyy-mm-dd}
+
+> ### like this u can combine any combination in the Query params
+>
+> sample search - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf&upload_date=2024-09-15
+> Only type http://52.66.239.215/searchFiles?file_type=pdf
+> Onnly date - http://52.66.239.215/searchFiles?upload_date=2024-09-15
+> Only Filename - http://52.66.239.215/searchFiles?filename=ab
+> File name and type - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf
+
+> Description: Search for files with optional query parameters (filename, upload_date, file_type).
+>
+> **Query Params :**
+>
+> ```bash
+>
+>    "filename":"abcd"
+>    "file_type":"pdf"
+> "upload_date":"YYYY-MM-DD"
+>
+> ```
+>
+> **Response**
+>
+> ```bash
+> [
+>    {
+>        "ID": 6,
+>        "Filename": "abcd (1).pdf",
+>        "URL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/abcd (1).pdf",
+>        "Size": 69249,
+>        "UploadDate": "2024-09-15T08:00:41.729401Z",
+>        "Email": "surya"
+>    },
+>    {
+>        "ID": 10,
+>        "Filename": "Database Details - RDS Management Console.pdf",
+>        "URL": "https://file-upload-bucket-surya-aws.s3.ap-south-1.amazonaws.com/uploads/Database Details - RDS Management Console.pdf",
+>        "Size": 519341,
+>        "UploadDate": "2024-09-15T08:05:59.113392Z",
+>        "Email": "surya"
+>    }
+> ]
+> ```
+
 5.  GET /files/{email}: Retrieve metadata for files uploaded by a specific email.
 6.  GET /share/{file_id}: Generate a public link for a file.
