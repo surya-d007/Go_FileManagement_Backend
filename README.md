@@ -1,12 +1,7 @@
-# 21BCE5685 SURYA D - Backend Task - Trademarkia
 
 > ## File Management System - Go , AWS S3 , AWS RDS Postgres , Docker , EC2 hosting , JWT , Cache , AWS CLI , Cron Job
 
 > ### Docker hub - https://hub.docker.com/r/suryad007/backendgoapp1/tags
-
-## Server base URL - http://52.66.239.215
-
-> ## Note : It is http
 
 ## Features
 
@@ -53,7 +48,7 @@ Before running the Go server, ensure you have the following tools installed and 
 
 # API info:
 
-### 1. POST - /register - http://52.66.239.215/register
+### 1. POST - /register -
 
 > Description: Registers a new user with email and hashed password.
 >
@@ -73,7 +68,7 @@ Before running the Go server, ensure you have the following tools installed and 
 > Status - 201 Created
 > ```
 
-### 2. POST /login - http://52.66.239.215/login
+### 2. POST /login -
 
 > Description: Logs in an existing user and returns a JWT token.
 >
@@ -94,7 +89,7 @@ Before running the Go server, ensure you have the following tools installed and 
 > }
 > ```
 
-### 3. POST /upload: - http://52.66.239.215/upload
+### 3. POST /upload: -
 
 > Description: DesUpload a file to S3 and store metadata in PostgreSQL and get filE url as response
 >
@@ -117,10 +112,10 @@ Before running the Go server, ensure you have the following tools installed and 
 > }
 > ```
 
-### 4. GET /files/{email}: - http://52.66.239.215/files/{userEmail}
+### 4. GET /files/{email}: - 
 
 > Description: Retrieve metadata for files uploaded by a specific email.
-> Sample : http://52.66.239.215/files/sample@gmail.com > **Response**
+> Sample :/files/sample@gmail.com > **Response**
 >
 > ```bash
 > [
@@ -144,19 +139,19 @@ Before running the Go server, ensure you have the following tools installed and 
 >
 > ```
 
-### 5. GET /searchFiles: - http://52.66.239.215/searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
+### 5. GET /searchFiles: - /searchFiles?filename={FileName}&file_type={FileType}&upload_date={yyyy-mm-dd}
 
 > #### like this u can combine any combination in the Query params
 >
-> #### sample search - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf&upload_date=2024-09-15
+> #### sample search -searchFiles?filename=ab&file_type=pdf&upload_date=2024-09-15
 >
-> #### Only type http://52.66.239.215/searchFiles?file_type=pdf
+> #### Only type /searchFiles?file_type=pdf
 >
-> #### Onnly date - http://52.66.239.215/searchFiles?upload_date=2024-09-15
+> #### Onnly date - /searchFiles?upload_date=2024-09-15
 >
-> #### Only Filename - http://52.66.239.215/searchFiles?filename=ab
+> #### Only Filename - /searchFiles?filename=ab
 >
-> #### File name and type - http://52.66.239.215/searchFiles?filename=ab&file_type=pdf
+> #### File name and type - /searchFiles?filename=ab&file_type=pdf
 
 > Description: Search for files with optional query parameters (filename, upload_date, file_type).
 >
@@ -193,7 +188,7 @@ Before running the Go server, ensure you have the following tools installed and 
 > ]
 > ```
 
-### 6. GET /share/{file_id}: - http://52.66.239.215/share/27
+### 6. GET /share/{file_id}: -/share/27
 
 > Description: Generate a public link for a file using the id assigned by Postgres
 >
